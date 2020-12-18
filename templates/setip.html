@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+ <h2 class="page-header">LAN设置{{contents}}</h2>
+  <form method="POST" action="/setip">
+    <div class="form-group">
+      <label for="ipadd">网络地址:</label>
+      <input type="text" class="form-control" id="ipadd" placeholder="" name="ipadd" value="{{conf["static ip_address"]}}">
+    </div>
+    <div class="form-group">
+      <label for="routers">网关地址:</label>
+      <input type="text" class="form-control" id="routers" placeholder="" name="routers" value="{{conf["static routers"]}}">
+    </div>
+    <div class="form-group">
+      <label for="dns">DNS地址:</label>
+      <input type="text" class="form-control" id="dns" placeholder="" name="dns" value="{{conf["static domain_name_servers"]}}">
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">
+      保存</button>
+
+    
+</button>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}

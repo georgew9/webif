@@ -1,0 +1,1 @@
+[{"id": 1, "name": "admin", "password": "pbkdf2:sha256:50000$ikqiBQQO$8b1949d62603609fee6ee9685af683b7b54f2d1ca6f21cbed4d391bfaef05117"}, {"id": 2, "name": "george", "password": "pbkdf2:sha256:50000$MXopTuXl$8b5d01b5da350d2eba96ed63ae2aebf6b40460f49830864fad8e79862b5f1b2f"}]

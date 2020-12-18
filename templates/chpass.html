@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+ <div class="card-body">
+ <h2 class="page-header">修改密码</h2>
+  <form method="POST">
+
+    <div class="form-group">
+      <label for="username">账号:</label>
+      <input type="text" class="form-control" id="username" placeholder="" name="username">
+    </div>
+    <div class="form-group">
+      <label for="password">原密码:</label>
+      <input type="password" class="form-control" id="password" placeholder="" name="password">
+    </div>
+    <div class="form-group">
+      <label for="password">新密码:</label>
+      <input type="password" class="form-control" id="newpassword" placeholder="" name="newpassword">
+    </div>
+    <div class="form-group">
+      <label for="password">确认新密码:</label>
+      <input type="password" class="form-control" id="cnewpassword" placeholder="" name="cnewpassword">
+    </div>
+    <button type="submit" class="btn btn-primary">保存</button>
+  </form>
+  {{emsg}}
+ </div>
+</div>
+{% endblock %}

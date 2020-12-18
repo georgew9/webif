@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+ <h2 class="page-header">侦测设置</h2>
+  <form method="POST">
+    <div class="form-group">
+      <label for="devicename">设备名(DeviceName):</label>
+      <input type="text" class="form-control" id="devicename" placeholder="" name="devicename" value="{{conf["server"]["devicename"]}}">
+    </div>
+    <label>MQTT服务器</label>
+    <div class="col-sm-offset-3 col-sm-9">
+    <div class="form-group">
+      <label for="ipadd">网络地址(IP):</label>
+      <input type="text" class="form-control" id="ipadd" placeholder="" name="ipadd" value="{{conf["server"]["host"]}}">
+    </div>    
+    <div class="form-group">
+      <label for="port">端口号(Port):</label>
+      <input type="text" class="form-control" id="port" placeholder="" name="port" value="{{conf["server"]["port"]}}">
+    </div>
+    <div class="form-group">
+      <label for="port">账号(User):</label>
+      <input type="text" class="form-control" id="port" placeholder="" name="port" value="{{conf["server"]["user"]}}">
+    </div>
+    <div class="form-group">
+      <label for="port">密码(Password):</label>
+      <input type="text" class="form-control" id="port" placeholder="" name="port" value="{{conf["server"]["password"]}}">
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label>侦测响应:</label>
+      <div class="col-sm-offset-2 col-sm-10">
+      {% for key in conf["event"] %} 
+        <div class="checkbox">
+          <label><input type="checkbox" name="eventitem" value="{{key}}" {{'checked="checked"' if conf["event"][key]=='true' else ""}}> {{evtname  [key]}} </label>
+        </div>
+      {% endfor %}    
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="detectitem">侦测项:</label>
+      <div class="d-flex col-sm-offset-1 col-sm-11">
+      {% for key in conf["detectitem"] %} 
+          <div class="form-check form-check-inline p-2">
+          <label class="form-check-label"><input type="checkbox" name="detectitem" value="{{key}}" {{'checked="checked"' if conf["detectitem"][key]=='true' else ""}}> {{detname[key]}} </label>
+          </div>
+      {% endfor %}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}

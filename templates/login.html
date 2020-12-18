@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% block content %}
+<div class="card">
+ <div class="card-body">
+ <h2 class="page-header">登录</h2>
+  <form method="POST">
+
+    <div class="form-group">
+      <label for="username">账号(User):</label>
+      <input type="text" class="form-control" id="username" placeholder="" name="username">
+    </div>
+    <div class="form-group">
+      <label for="password">密码(Password):</label>
+      <input type="password" class="form-control" id="password" placeholder="" name="password">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">登录</button>
+  </form>
+  {{emsg}}
+ </div>
+</div>
+{% endblock %}
